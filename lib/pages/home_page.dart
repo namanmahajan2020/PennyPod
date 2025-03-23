@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:walletappui/util/my_button.dart';
 import 'package:walletappui/util/my_card.dart';
+import 'package:walletappui/util/my_list_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage> {
               count: 3,
               effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
@@ -105,50 +106,20 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.symmetric(horizontal:25.0),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 80,
-                            padding: EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[100],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Image.asset('lib/icons/statistics.png'),
-                          ),
-                          SizedBox(width: 20),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Statistics',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              Text(
-                                'Payments and Income',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.grey[600],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Icon(Icons.arrow_forward_ios),
-                    ],
+                  MyListTile(
+                    iconImagePath: 'lib/icons/statistics.png',
+                    tileTitle: 'Statistics',
+                    tileSubTitle: 'Payment and Income',
+                  ),
+                  MyListTile(
+                    iconImagePath: 'lib/icons/transaction.png',
+                    tileTitle: 'Transactions',
+                    tileSubTitle: 'Transaction History',
                   ),
                 ],
               ),
