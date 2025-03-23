@@ -17,9 +17,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: CircleBorder(),
+        backgroundColor: Colors.pink,
+        child: Icon(Icons.monetization_on, size: 32, color: Colors.white),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[200],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.home, size: 32, color: Colors.pink[200]),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.settings, size: 32, color: Colors.grey),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
@@ -85,7 +112,7 @@ class _HomePageState extends State<HomePage> {
               count: 3,
               effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
@@ -108,7 +135,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal:25.0),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
                   MyListTile(
