@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:walletappui/util/my_button.dart';
 import 'package:walletappui/util/my_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -84,6 +85,74 @@ class _HomePageState extends State<HomePage> {
               effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
             ),
             SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MyButton(
+                    iconImagePath: 'lib/icons/send-money.png',
+                    buttonText: 'Send',
+                  ),
+                  MyButton(
+                    iconImagePath: 'lib/icons/credit-card.png',
+                    buttonText: 'Pay',
+                  ),
+                  MyButton(
+                    iconImagePath: 'lib/icons/bill.png',
+                    buttonText: 'Bills',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            height: 80,
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[100],
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Image.asset('lib/icons/statistics.png'),
+                          ),
+                          SizedBox(width: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Statistics',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                'Payments and Income',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
